@@ -7,6 +7,9 @@ FROM ubuntu:bionic
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
 
+# https://github.com/python-poetry/poetry/issues/1427#issuecomment-537260307
+ENV LANG C.UTF-8
+
 # This Dockerfile adds a non-root 'vscode' user with sudo access. However, for Linux,
 # this user's GID/UID must match your local user UID/GID to avoid permission issues
 # with bind mounts. Update USER_UID / USER_GID if yours is not 1000. See
